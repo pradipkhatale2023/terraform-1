@@ -1,0 +1,16 @@
+variable "ami_id" {
+   ami_id = "ami-0287a05f0ef0e9d9a"
+  
+}
+variable "instance_type" {
+   instance_type = "t2.micro"
+  
+}
+resource "aws_instance" "my-tf-instance" {
+    ami = var.ami_id
+    
+#   ami = "ami-0287a05f0ef0e9d9a"  # ami-id    
+#   ami = "ami-07d67603110c131fb" 
+#   instance_type = "t2.micro" # instance type
+   instance_type = var.instance_type 
+}
